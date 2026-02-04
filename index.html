@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DUALIS - ATF Experiment A (Announcement Bar)</title>
+  <title>DUALIS - ATF Experiment B (Attached Offer)</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- EXPERIMENT A: Enhanced Announcement Bar with Offer -->
+<!-- EXPERIMENT B: Announcement Bar (simpler) -->
 <div class="dualis-announcement-bar dualis-announcement-bar--offer">
   <div class="announcement-offer">
     <span class="announcement-offer__badge">LAUNCH SPECIAL</span>
-    <span class="announcement-offer__text">Free Personalized Hair Routine Review ($297 value) with every order</span>
+    <span class="announcement-offer__text">Free 1:1 Expert Session ($297 value) included with every order</span>
     <span class="announcement-offer__timer">Limited time only</span>
   </div>
 </div>
@@ -77,23 +77,13 @@
           <p class="dualis-hero__subtitle">Two shampoos. One method for longer hair.</p>
         </div>
 
-        <!-- EXPERIMENT: Offer Box in Hero -->
-        <div class="hero-offer-box">
-          <div class="hero-offer-box__header">
-            <i class="fas fa-gift"></i>
-            <span>LAUNCH BONUS INCLUDED</span>
-          </div>
-          <div class="hero-offer-box__content">
-            <h4>Free Hair Routine Review</h4>
-            <p>Our experts personally analyze your hair goals & current routine. Normally $297 - free with your order for a limited time.</p>
-          </div>
-        </div>
-
-        <!-- Purchase Options -->
+        <!-- Purchase Options with ATTACHED Offer Box -->
         <div class="dualis-hero__purchase">
+
+          <!-- Subscribe Option -->
           <label class="price-option price-option--selected">
             <input type="radio" name="purchase_type" value="subscribe" class="price-option__radio" checked>
-            <div class="price-option__container">
+            <div class="price-option__container price-option__container--with-bonus">
               <span class="price-option__badge">Save $10</span>
               <div class="price-option__content">
                 <div class="price-option__dot"></div>
@@ -112,16 +102,50 @@
                   </div>
                 </div>
               </div>
+
+              <!-- ATTACHED Bonus Box (only shows when this option selected) -->
+              <div class="price-option__bonus">
+                <div class="price-option__bonus-connector"></div>
+                <div class="price-option__bonus-content">
+                  <div class="price-option__bonus-icon">
+                    <i class="fas fa-gift"></i>
+                  </div>
+                  <div class="price-option__bonus-text">
+                    <span class="price-option__bonus-label">+ FREE BONUS INCLUDED</span>
+                    <span class="price-option__bonus-title">1:1 Expert Session</span>
+                    <span class="price-option__bonus-desc">Personalize your new shampoo routine to stop hair problems faster</span>
+                    <span class="price-option__bonus-value">$297 value — free for limited time</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </label>
+
+          <!-- One-Time Option -->
           <label class="price-option">
             <input type="radio" name="purchase_type" value="onetime" class="price-option__radio">
-            <div class="price-option__container price-option__container--simple">
+            <div class="price-option__container price-option__container--with-bonus">
               <div class="price-option__content">
                 <div class="price-option__dot"></div>
                 <div class="price-option__details price-option__details--inline">
                   <span class="price-option__title--simple">One-Time Purchase</span>
                   <span class="price-option__price--simple">$39.00</span>
+                </div>
+              </div>
+
+              <!-- ATTACHED Bonus Box (only shows when this option selected) -->
+              <div class="price-option__bonus">
+                <div class="price-option__bonus-connector"></div>
+                <div class="price-option__bonus-content">
+                  <div class="price-option__bonus-icon">
+                    <i class="fas fa-gift"></i>
+                  </div>
+                  <div class="price-option__bonus-text">
+                    <span class="price-option__bonus-label">+ FREE BONUS INCLUDED</span>
+                    <span class="price-option__bonus-title">1:1 Expert Session</span>
+                    <span class="price-option__bonus-desc">Personalize your new shampoo routine to stop hair problems faster</span>
+                    <span class="price-option__bonus-value">$297 value — free for limited time</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -139,7 +163,6 @@
         <div class="hero-trust-badges">
           <span><i class="fas fa-truck"></i> Free Shipping</span>
           <span><i class="fas fa-undo"></i> 60-Day Guarantee</span>
-          <span><i class="fas fa-gift"></i> + Free Review</span>
         </div>
       </div>
     </div>
@@ -170,16 +193,21 @@
 <section class="section-padding bg-white" style="min-height: 50vh;">
   <div class="dualis-container text-center">
     <h2 class="section-title">Rest of page continues below...</h2>
-    <p class="section-subtitle">This is the ATF experiment preview - scroll up to see the offer treatment</p>
+    <p class="section-subtitle">This is the ATF experiment preview - the offer box now attaches to whichever option is selected</p>
   </div>
 </section>
 
 <script>
-  // Price selector
+  // Price selector - bonus box follows selection
   document.querySelectorAll('input[name="purchase_type"]').forEach(radio => {
     radio.addEventListener('change', function() {
+      // Update selected state
       document.querySelectorAll('.price-option').forEach(opt => opt.classList.remove('price-option--selected'));
       this.closest('.price-option').classList.add('price-option--selected');
+
+      // Update cart button price
+      const price = this.value === 'subscribe' ? '$29.00' : '$39.00';
+      document.querySelector('.dualis-hero__atc span:last-child').textContent = price;
     });
   });
 </script>

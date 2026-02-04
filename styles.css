@@ -640,3 +640,142 @@ h1, h2, h3, h4, .serif { font-family: var(--font-serif); }
   font-weight: 300;
   font-style: italic;
 }
+
+/* ===========================================
+   ATTACHED BONUS BOX - EXPERIMENT B
+   Per Pauline feedback: bonus attaches to selected option
+   =========================================== */
+
+/* Container for bonus - only visible when option is selected */
+.price-option__bonus {
+  display: none;
+  margin-top: -1px; /* overlap border */
+  position: relative;
+}
+
+/* Show bonus only on selected option */
+.price-option--selected .price-option__bonus {
+  display: block;
+}
+
+/* Visual connector from option to bonus */
+.price-option__bonus-connector {
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  width: 2px;
+  height: 12px;
+  background-color: var(--color-gold);
+}
+
+/* Main bonus content area */
+.price-option__bonus-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  background: linear-gradient(135deg, #fefbf3 0%, #fdf6e8 100%);
+  border: 2px solid var(--color-gold);
+  border-top: none;
+  border-radius: 0 0 0.75rem 0.75rem;
+  padding: 1rem 1.25rem;
+  margin-top: 10px;
+  position: relative;
+}
+
+/* Dashed top border effect */
+.price-option__bonus-content::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-gold) 0px,
+    var(--color-gold) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+/* Gift icon container */
+.price-option__bonus-icon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.price-option__bonus-icon i {
+  color: white;
+  font-size: 14px;
+}
+
+/* Text content */
+.price-option__bonus-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.price-option__bonus-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gold);
+}
+
+.price-option__bonus-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-forest);
+}
+
+.price-option__bonus-desc {
+  font-size: 12px;
+  color: #5C6B66;
+  line-height: 1.4;
+}
+
+.price-option__bonus-value {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-gold);
+  margin-top: 0.25rem;
+}
+
+/* When selected, extend the main container styling */
+.price-option--selected .price-option__container--with-bonus {
+  border-radius: 0.75rem 0.75rem 0 0;
+  border-bottom-color: transparent;
+}
+
+/* Smooth transition */
+.price-option__bonus-content {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* One-time option adjustments when selected */
+.price-option:last-child.price-option--selected .price-option__container--simple {
+  opacity: 1;
+  background-color: var(--color-sage-light);
+  border-color: var(--color-sage);
+}
