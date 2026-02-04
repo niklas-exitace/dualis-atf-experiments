@@ -84,15 +84,15 @@
           <label class="price-option price-option--selected">
             <input type="radio" name="purchase_type" value="subscribe" class="price-option__radio" checked>
             <div class="price-option__container price-option__container--with-bonus">
-              <span class="price-option__badge">Save $10</span>
+              <span class="price-option__badge">Save $20</span>
               <div class="price-option__content">
                 <div class="price-option__dot"></div>
                 <div class="price-option__details">
                   <div class="price-option__header">
                     <span class="price-option__title editorial-italic">Subscribe & Save</span>
                     <div class="price-option__prices">
-                      <span class="price-option__price">$29.00</span>
-                      <span class="price-option__compare">$39.00</span>
+                      <span class="price-option__price">$39.00</span>
+                      <span class="price-option__compare">$59.00</span>
                     </div>
                   </div>
                   <div class="price-option__benefits">
@@ -110,9 +110,9 @@
                     <i class="fas fa-gift"></i>
                   </div>
                   <div class="price-option__bonus-text">
-                    <span class="price-option__bonus-label">+ Includes free bonus</span>
-                    <span class="price-option__bonus-title">1:1 Expert Session to personalize your routine</span>
-                    <span class="price-option__bonus-value">$297 value — free for limited time</span>
+                    <span class="price-option__bonus-label">Free Hair Routine Review Included</span>
+                    <span class="price-option__bonus-desc">Stop your hair problems faster with a 1:1 expert session to personalize your shampoo routine.</span>
+                    <span class="price-option__bonus-value">Normally $297 — Free with this order. Limited time only.</span>
                   </div>
                 </div>
               </div>
@@ -127,7 +127,7 @@
                 <div class="price-option__dot"></div>
                 <div class="price-option__details price-option__details--inline">
                   <span class="price-option__title--simple">One-Time Purchase</span>
-                  <span class="price-option__price--simple">$39.00</span>
+                  <span class="price-option__price--simple">$59.00</span>
                 </div>
               </div>
 
@@ -138,9 +138,9 @@
                     <i class="fas fa-gift"></i>
                   </div>
                   <div class="price-option__bonus-text">
-                    <span class="price-option__bonus-label">+ Includes free bonus</span>
-                    <span class="price-option__bonus-title">1:1 Expert Session to personalize your routine</span>
-                    <span class="price-option__bonus-value">$297 value — free for limited time</span>
+                    <span class="price-option__bonus-label">Free Hair Routine Review Included</span>
+                    <span class="price-option__bonus-desc">Stop your hair problems faster with a 1:1 expert session to personalize your shampoo routine.</span>
+                    <span class="price-option__bonus-value">Normally $297 — Free with this order. Limited time only.</span>
                   </div>
                 </div>
               </div>
@@ -152,7 +152,7 @@
         <button class="btn-primary dualis-hero__atc">
           <span>Add to Cart</span>
           <span class="btn-dot"></span>
-          <span>$29.00</span>
+          <span>$39.00</span>
         </button>
 
         <!-- Trust badges under button -->
@@ -202,7 +202,7 @@
       this.closest('.price-option').classList.add('price-option--selected');
 
       // Update cart button price
-      const price = this.value === 'subscribe' ? '$29.00' : '$39.00';
+      const price = this.value === 'subscribe' ? '$39.00' : '$59.00';
       document.querySelector('.dualis-hero__atc span:last-child').textContent = price;
     });
   });
