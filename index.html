@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DUALIS - ATF Experiment A (Announcement Bar)</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- EXPERIMENT A: Enhanced Announcement Bar with Offer -->
+<div class="dualis-announcement-bar dualis-announcement-bar--offer">
+  <div class="announcement-offer">
+    <span class="announcement-offer__badge">LAUNCH SPECIAL</span>
+    <span class="announcement-offer__text">Free Personalized Hair Routine Review ($297 value) with every order</span>
+    <span class="announcement-offer__timer">Limited time only</span>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="dualis-nav">
+  <div class="dualis-container">
+    <div class="dualis-nav__inner">
+      <a href="/" class="dualis-nav__logo">DUALIS</a>
+      <div class="dualis-nav__menu">
+        <a href="#hero" class="dualis-nav__link">Shop</a>
+        <a href="#method" class="dualis-nav__link">Our Method</a>
+        <a href="#reviews" class="dualis-nav__link">Reviews</a>
+        <a href="#faq" class="dualis-nav__link">FAQ</a>
+      </div>
+      <a href="#" class="dualis-nav__cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="dualis-nav__cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="hero" class="section-padding-hero bg-cream">
+  <div class="dualis-container">
+    <div class="grid-hero">
+      <!-- LEFT: Product Gallery -->
+      <div class="dualis-carousel">
+        <div class="dualis-carousel__main">
+          <img src="https://placehold.co/600x750/F2F5F4/2A3B34?text=Product+Image" alt="Product">
+        </div>
+        <div class="dualis-carousel__thumbnails">
+          <button class="dualis-carousel__thumb dualis-carousel__thumb--active">
+            <img src="https://placehold.co/100x100/F2F5F4/2A3B34?text=1" alt="Thumb 1">
+          </button>
+          <button class="dualis-carousel__thumb">
+            <img src="https://placehold.co/100x100/F2F5F4/2A3B34?text=2" alt="Thumb 2">
+          </button>
+          <button class="dualis-carousel__thumb">
+            <img src="https://placehold.co/100x100/F2F5F4/2A3B34?text=3" alt="Thumb 3">
+          </button>
+          <button class="dualis-carousel__thumb">
+            <img src="https://placehold.co/100x100/F2F5F4/2A3B34?text=4" alt="Thumb 4">
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT: Product Info -->
+      <div class="dualis-hero__info">
+        <div class="dualis-hero__header">
+          <div class="dualis-hero__meta">
+            <span class="tag tag--sage">Growth + Retention</span>
+            <div class="dualis-hero__rating">
+              <div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+              <span class="dualis-hero__reviews">12,720 Reviews</span>
+            </div>
+          </div>
+          <h1 class="dualis-hero__title">The Length <span class="editorial-italic">Code</span></h1>
+          <p class="dualis-hero__subtitle">Two shampoos. One method for longer hair.</p>
+        </div>
+
+        <!-- EXPERIMENT: Offer Box in Hero -->
+        <div class="hero-offer-box">
+          <div class="hero-offer-box__header">
+            <i class="fas fa-gift"></i>
+            <span>LAUNCH BONUS INCLUDED</span>
+          </div>
+          <div class="hero-offer-box__content">
+            <h4>Free Hair Routine Review</h4>
+            <p>Our experts personally analyze your hair goals & current routine. Normally $297 - free with your order for a limited time.</p>
+          </div>
+        </div>
+
+        <!-- Purchase Options -->
+        <div class="dualis-hero__purchase">
+          <label class="price-option price-option--selected">
+            <input type="radio" name="purchase_type" value="subscribe" class="price-option__radio" checked>
+            <div class="price-option__container">
+              <span class="price-option__badge">Save $10</span>
+              <div class="price-option__content">
+                <div class="price-option__dot"></div>
+                <div class="price-option__details">
+                  <div class="price-option__header">
+                    <span class="price-option__title editorial-italic">Subscribe & Save</span>
+                    <div class="price-option__prices">
+                      <span class="price-option__price">$29.00</span>
+                      <span class="price-option__compare">$39.00</span>
+                    </div>
+                  </div>
+                  <div class="price-option__benefits">
+                    <p><i class="fas fa-check-circle text-sage"></i> Best value</p>
+                    <p><i class="fas fa-sync-alt text-sage"></i> Delivery every 4 weeks</p>
+                    <p><i class="fas fa-unlock text-sage"></i> Pause or cancel anytime</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </label>
+          <label class="price-option">
+            <input type="radio" name="purchase_type" value="onetime" class="price-option__radio">
+            <div class="price-option__container price-option__container--simple">
+              <div class="price-option__content">
+                <div class="price-option__dot"></div>
+                <div class="price-option__details price-option__details--inline">
+                  <span class="price-option__title--simple">One-Time Purchase</span>
+                  <span class="price-option__price--simple">$39.00</span>
+                </div>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <!-- Add to Cart -->
+        <button class="btn-primary dualis-hero__atc">
+          <span>Add to Cart</span>
+          <span class="btn-dot"></span>
+          <span>$29.00</span>
+        </button>
+
+        <!-- Trust badges under button -->
+        <div class="hero-trust-badges">
+          <span><i class="fas fa-truck"></i> Free Shipping</span>
+          <span><i class="fas fa-undo"></i> 60-Day Guarantee</span>
+          <span><i class="fas fa-gift"></i> + Free Review</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST MARQUEE -->
+<section class="dualis-marquee bg-sand">
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span class="dualis-marquee__item"><i class="fas fa-tint text-sage"></i> Silicone-Free</span>
+      <span class="dualis-marquee__item"><i class="fas fa-star text-sage"></i> 12,000+ Journeys</span>
+      <span class="dualis-marquee__item"><i class="fas fa-leaf text-sage"></i> Vegan</span>
+      <span class="dualis-marquee__item"><i class="fas fa-ban text-sage"></i> No Parabens</span>
+      <span class="dualis-marquee__item"><i class="fas fa-paw text-sage"></i> Cruelty-Free</span>
+      <span class="dualis-marquee__item"><i class="fas fa-clock text-sage"></i> 60-Day Returns</span>
+      <span class="dualis-marquee__item"><i class="fas fa-tint text-sage"></i> Silicone-Free</span>
+      <span class="dualis-marquee__item"><i class="fas fa-star text-sage"></i> 12,000+ Journeys</span>
+      <span class="dualis-marquee__item"><i class="fas fa-leaf text-sage"></i> Vegan</span>
+      <span class="dualis-marquee__item"><i class="fas fa-ban text-sage"></i> No Parabens</span>
+      <span class="dualis-marquee__item"><i class="fas fa-paw text-sage"></i> Cruelty-Free</span>
+      <span class="dualis-marquee__item"><i class="fas fa-clock text-sage"></i> 60-Day Returns</span>
+    </div>
+  </div>
+</section>
+
+<!-- Placeholder for rest of page -->
+<section class="section-padding bg-white" style="min-height: 50vh;">
+  <div class="dualis-container text-center">
+    <h2 class="section-title">Rest of page continues below...</h2>
+    <p class="section-subtitle">This is the ATF experiment preview - scroll up to see the offer treatment</p>
+  </div>
+</section>
+
+<script>
+  // Price selector
+  document.querySelectorAll('input[name="purchase_type"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      document.querySelectorAll('.price-option').forEach(opt => opt.classList.remove('price-option--selected'));
+      this.closest('.price-option').classList.add('price-option--selected');
+    });
+  });
+</script>
+
+</body>
+</html>
